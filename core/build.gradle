@@ -2,6 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+project.logger.lifecycle("core logger")
+project.logger.lifecycle("build script executed with parameter js: " + project.hasProperty("js"))
+project.logger.lifecycle("project.name: " + project.name)
+project.logger.lifecycle("project path:" + project.path)
+
 android {
     compileSdkVersion 28
 
