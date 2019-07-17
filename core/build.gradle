@@ -25,7 +25,7 @@ android {
 // This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
 // look like: /src/commonMain/kotlin
 kotlin {
-    jvm()
+//    jvm()
     sourceSets {
         main.kotlin.srcDirs += 'src/main/java'
 
