@@ -1,32 +1,40 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
-project.logger.lifecycle("core logger")
-project.logger.lifecycle("build script executed with parameter js: " + project.hasProperty("js"))
-project.logger.lifecycle("project.name: " + project.name)
-project.logger.lifecycle("project path:" + project.path)
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-multiplatform'
 
 android {
     compileSdkVersion 28
-
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
 
+// kotlin multiplatform has a predefined template structure with a commonMain, thus
+// needing references to your source if deviating from this convention.
+// This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
+// look like: /src/commonMain/kotlin
+kotlin {
+    jvm()
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/java'
+
+        commonMain {
+            // We add the source set origin, otherwise the files in src/main/java would not be compiled.
+            dependsOn main
+            kotlin.srcDir('src')
+        }
+    }
 }
 
 dependencies {
@@ -37,6 +45,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
 repositories {
     mavenCentral()
 }
