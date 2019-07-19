@@ -29,7 +29,8 @@ android {
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-//        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
 //        androidTest.resources.srcDirs += 'src/androidTest/res'
     }
 }
@@ -39,7 +40,7 @@ android {
 // This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
 // look like: /src/commonMain/kotlin
 kotlin {
-    jvm("jvm") // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
+//    jvm("jvm") // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
 //    with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
 //    MavenArtifact core:jar:jar:null.
 //    js("js") // Used name "js" to not have the jitpack error (cannot have multiple artifacts with same type and classifier),
@@ -52,7 +53,6 @@ kotlin {
 
     sourceSets {
         main.kotlin.srcDirs += 'src/main/kotlin'
-
         commonMain {
             // We add the source set origin, otherwise the files in src/main/java would not be compiled.
             dependsOn main
