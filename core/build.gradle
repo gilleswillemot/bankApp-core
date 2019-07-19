@@ -29,7 +29,9 @@ kotlin {
     js()
 
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android {}
+//    android {
+//        publishLibraryVariants("release", "debug")
+//    }
 
     sourceSets {
         main.kotlin.srcDirs += 'src/main/java'
@@ -43,7 +45,7 @@ kotlin {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
