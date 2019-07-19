@@ -27,11 +27,11 @@ android {
     lintOptions {
         abortOnError false
     }
-//    sourceSets {
-//        main.java.srcDirs += 'src/main/kotlin'
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
 //        androidTest.java.srcDirs += 'src/androidTest/kotlin'
 //        androidTest.resources.srcDirs += 'src/androidTest/res'
-//    }
+    }
 }
 
 // kotlin multiplatform has a predefined template structure with a commonMain, thus
@@ -39,7 +39,7 @@ android {
 // This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
 // look like: /src/commonMain/kotlin
 kotlin {
-//    jvm("jar") // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
+    jvm("jvm") // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
 //    with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
 //    MavenArtifact core:jar:jar:null.
 //    js("js") // Used name "js" to not have the jitpack error (cannot have multiple artifacts with same type and classifier),
@@ -51,7 +51,7 @@ kotlin {
     }
 
     sourceSets {
-        main.kotlin.srcDirs += 'src/main/java'
+        main.kotlin.srcDirs += 'src/main/kotlin'
 
         commonMain {
             // We add the source set origin, otherwise the files in src/main/java would not be compiled.
@@ -70,27 +70,28 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.java.sourceFiles
-}
-
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-task classesJar(type: Jar) {
-    from "$buildDir/intermediates/classes/release"
-}
-
-artifacts {
-    archives classesJar
-    archives javadocJar
-    archives sourcesJar
-}
+// source: https://developpaper.com/basic-usage-of-jitpack-io/
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from android.sourceSets.main.java.sourceFiles
+//}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//task classesJar(type: Jar) {
+//    from "$buildDir/intermediates/classes/release"
+//}
+//
+//artifacts {
+//    archives classesJar
+//    archives javadocJar
+//    archives sourcesJar
+//}
