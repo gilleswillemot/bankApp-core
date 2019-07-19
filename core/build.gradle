@@ -29,9 +29,7 @@ kotlin {
     js()
 
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android {
-        publishLibraryVariants("release", "debug")
-    }
+    android {}
 
     sourceSets {
         main.kotlin.srcDirs += 'src/main/java'
