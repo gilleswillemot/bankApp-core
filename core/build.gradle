@@ -73,11 +73,18 @@ kotlin {
 //        commonAndroidTest {
 //            kotlin.srcDir('src/androidTest/java')
 //        }
+        // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
 //        jvm().compilations.main.defaultSourceSet {
 //            dependencies {
 //                implementation kotlin('stdlib-jdk8')
 //            }
 //        }
+        jvmMain {
+            dependsOn commonMain
+        }
+        androidMain {
+            dependsOn commonMain
+        }
     }
 }
 
