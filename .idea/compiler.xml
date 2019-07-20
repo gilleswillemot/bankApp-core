@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="core_jarMain" target="1.6" />
       <module name="core_jarTest" target="1.6" />
+      <module name="core_jvm2Main" target="1.6" />
+      <module name="core_jvm2Test" target="1.6" />
       <module name="core_jvmMain" target="1.6" />
       <module name="core_jvmTest" target="1.6" />
     </bytecodeTargetLevel>
