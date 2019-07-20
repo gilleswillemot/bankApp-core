@@ -29,9 +29,8 @@ android {
     // Added sourceSets as I renamed the java folder to kotlin.
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-//        androidTest.resources.srcDirs += 'src/androidTest/res'
+        test.java.srcDirs += 'src/test/java'
+        androidTest.java.srcDirs += 'src/androidTest/java'
     }
 }
 
@@ -52,11 +51,11 @@ kotlin {
     }
 
     sourceSets {
-        main.kotlin.srcDirs += 'src/main/kotlin'
         commonMain {
-            // We add the source set origin, otherwise the files in src/main/java would not be compiled.
-            dependsOn main
+            // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
+            // otherwise the files in src/main/kotlin would not be compiled.
             kotlin.srcDir('src')
+            resources.srcDir('res')
         }
     }
 }
@@ -69,34 +68,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-
-// I tried to add the classes.jar, as it is missing when using kotlin-multiplatform rather than android plugin.
-// source: https://developpaper.com/basic-usage-of-jitpack-io/
-// also gives error when publishing library with jitpack (Could not publish configuration 'archives' A POM cannot have
-// multiple artifacts with the same type and classifier. Already have MavenArtifact core:jar:jar:null,
-// trying to add MavenArtifact core:jar:jar:null.)
-
-//task sourcesJar(type: Jar) {
-//    classifier = 'sources'
-//    from android.sourceSets.main.java.sourceFiles
-//}
-//
-//task javadoc(type: Javadoc) {
-//    source = android.sourceSets.main.java.sourceFiles
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//}
-//
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-//
-//task classesJar(type: Jar) {
-//    from "$buildDir/intermediates/classes/release"
-//}
-//
-//artifacts {
-//    archives classesJar
-//    archives javadocJar
-//    archives sourcesJar
-//}
