@@ -47,9 +47,11 @@ kotlin {
 //    This is probably because we need to use js("othername") as using js() will make core.jar (which already exists)
 
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android {
+//    android {
 //        publishLibraryVariants("release", "debug")
-    }
+//    }
+
+    android()
 
     sourceSets {
         commonMain {
@@ -84,9 +86,6 @@ kotlin {
         }
         androidMain {
             dependsOn commonMain
-            dependencies {
-                implementation kotlin('stdlib-jdk8')
-            }
         }
     }
 }
