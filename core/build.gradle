@@ -29,8 +29,6 @@ android {
     // Added sourceSets as I renamed the java folder to kotlin.
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/java'
-        androidTest.java.srcDirs += 'src/androidTest/java'
     }
 }
 
@@ -54,8 +52,11 @@ kotlin {
         commonMain {
             // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
             // otherwise the files in src/main/kotlin would not be compiled.
-            kotlin.srcDir('src')
-            resources.srcDir('res')
+            kotlin.srcDir('src/main/kotlin')
+            resources.srcDir('src/main/res')
+        }
+        commonTest {
+            kotlin.srcDir('src/test')
         }
     }
 }
