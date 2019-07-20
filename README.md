@@ -1,4 +1,5 @@
 # bankApp-core
+[![](https://jitpack.io/v/gilleswillemot/bankApp-core.svg)](https://jitpack.io/#gilleswillemot/bankApp-core)
 
 This library will contain all the interfaces (mostly providers, e.g. IBankProvider).
 Dependency Inversion: by using interfaces, which are implemented in different libraries (e.g. BankProviderImpl) you guard your higher level object
