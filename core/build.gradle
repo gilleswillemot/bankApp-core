@@ -1,3 +1,6 @@
+/**
+ * Build via terminal: gradlew :core:build
+ */
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-multiplatform'
 
@@ -54,15 +57,27 @@ kotlin {
             // otherwise the files in src/main/kotlin would not be compiled.
             kotlin.srcDir('src/main/kotlin')
             resources.srcDir('src/main/res')
-        }
-        commonTest {
-            kotlin.srcDir('src/test')
-        }
-        jvm().compilations.main.defaultSourceSet {
             dependencies {
-                implementation kotlin('stdlib-jdk8')
+                // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
+                implementation kotlin('stdlib-common')
             }
         }
+        commonTest {
+            kotlin.srcDir('src/test/java')
+            dependencies {
+                implementation kotlin('test-common')
+                implementation kotlin('test-annotations-common')
+                implementation kotlin('test-junit')
+            }
+        }
+//        commonAndroidTest {
+//            kotlin.srcDir('src/androidTest/java')
+//        }
+//        jvm().compilations.main.defaultSourceSet {
+//            dependencies {
+//                implementation kotlin('stdlib-jdk8')
+//            }
+//        }
     }
 }
 
