@@ -1,46 +1,56 @@
 /**
  * Build via terminal: `gradlew :core:build`
+ *
+ * To build the .js files from the .jar files (into '/web' directory) run: `gradlew build -Pjs`
+ *
  * To build with kotlin-multiplatform (to build js, native, jvm, ...): `gradlew :core:build -Pmp`
  *
  * This parameter (and android plugin) are possibly redundant, as normally everything could be build
  * via kotlin-multiplatform plugin. Temporary build with parameter until solution is found.
  */
-apply plugin: 'com.android.library'
 
-repositories {
-    mavenCentral()
-}
+if (project.hasProperty("js")) {
+    project.logger.lifecycle('building JavaScript files.')
+    apply from: "build-js.gradle"
+} else {
+    apply plugin: 'com.android.library'
+    apply plugin: 'maven-publish'
 
-group = 'com.github.jitpack'
-version = '1.0'
-
-android {
-    compileSdkVersion 28
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    repositories {
+        mavenCentral()
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+    group = 'be.abstraction.core'
+    version = '0.0.1'
+
+    android {
+        compileSdkVersion 28
+        defaultConfig {
+            minSdkVersion 21
+            targetSdkVersion 28
+            versionCode 1
+            versionName "1.0"
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+        lintOptions {
+            abortOnError false
+        }
+        // Added sourceSets as I renamed the java folder to kotlin.
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
         }
     }
-    lintOptions {
-        abortOnError false
-    }
-    // Added sourceSets as I renamed the java folder to kotlin.
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-}
 
 //enableFeaturePreview('GRADLE_METADATA')
 
-//if (!project.hasProperty("mp")) {
+
+//else if (!project.hasProperty("mp")) {
 //    apply plugin: 'kotlin-android'
 //} else {
     project.logger.lifecycle('building with kotlin-multiplatform')
@@ -53,12 +63,12 @@ android {
  * look like: /src/commonMain/kotlin
  */
     kotlin {
-//        jvm() // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
+        jvm() // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
         // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
         // MavenArtifact core:jar:jar:null.
         // This is probably because we need to use js("othername") as using js() will make core.jar (which already exists)
 
-//        js()
+        js()
 
         // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
         android {
@@ -102,13 +112,13 @@ android {
             }
         }
     }
-//}
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    }
 }
