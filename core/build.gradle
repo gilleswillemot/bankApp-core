@@ -1,8 +1,11 @@
 /**
- * Build via terminal: gradlew :core:build
+ * Build via terminal: `gradlew :core:build`
+ * To build with kotlin-multiplatform (to build js, native, jvm, ...): `gradlew :core:build -Pmp`
+ *
+ * This parameter (and android plugin) are possibly redundant, as normally everything could be build
+ * via kotlin-multiplatform plugin. Temporary build with parameter until solution is found.
  */
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-multiplatform'
 
 repositories {
     mavenCentral()
@@ -35,59 +38,71 @@ android {
     }
 }
 
-// kotlin multiplatform has a predefined template structure with a commonMain, thus
-// references to your source are needed if deviating from this convention.
-// This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
-// look like: /src/commonMain/kotlin
-kotlin {
-    jvm() // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
-//    with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
-//    MavenArtifact core:jar:jar:null.
-//    js("js") // Used name "js" to not have the jitpack error (cannot have multiple artifacts with same type and classifier),
-//    This is probably because we need to use js("othername") as using js() will make core.jar (which already exists)
+//enableFeaturePreview('GRADLE_METADATA')
 
-    // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android {
-        publishLibraryVariants("release", "debug")
-    }
+//if (!project.hasProperty("mp")) {
+//    apply plugin: 'kotlin-android'
+//} else {
+    project.logger.lifecycle('building with kotlin-multiplatform')
 
-    sourceSets {
-        commonMain {
-            // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
-            // otherwise the files in src/main/kotlin would not be compiled.
-            kotlin.srcDir('src/main/kotlin')
-            resources.srcDir('src/main/res')
-            dependencies {
-                // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
-                implementation kotlin('stdlib-common')
-            }
+    apply plugin: 'kotlin-multiplatform'
+
+/** kotlin multiplatform has a predefined template structure with a commonMain, thus
+ * references to your source are needed if deviating from this convention.
+ * This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
+ * look like: /src/commonMain/kotlin
+ */
+    kotlin {
+        jvm() // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
+        // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
+        // MavenArtifact core:jar:jar:null.
+        // This is probably because we need to use js("othername") as using js() will make core.jar (which already exists)
+
+        js()
+
+        // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
+        android {
+            publishLibraryVariants("release", "debug")
         }
-        commonTest {
-            kotlin.srcDir('src/test/java')
-            dependencies {
-                implementation kotlin('test-common')
-                implementation kotlin('test-annotations-common')
-                implementation kotlin('test-junit')
+
+        sourceSets {
+            commonMain {
+                // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
+                // otherwise the files in src/main/kotlin would not be compiled.
+                kotlin.srcDir('src/main/kotlin')
+                resources.srcDir('src/main/res')
+                dependencies {
+                    // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
+                    implementation kotlin('stdlib-common')
+                }
             }
-        }
+            commonTest {
+                kotlin.srcDir('src/test/java')
+                dependencies {
+                    implementation kotlin('test-common')
+                    implementation kotlin('test-annotations-common')
+                    implementation kotlin('test-junit')
+                }
+            }
 //        commonAndroidTest {
 //            kotlin.srcDir('src/androidTest/java')
 //        }
 
-        // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
-        jvm().compilations.main.defaultSourceSet {
-            dependencies {
-                implementation kotlin('stdlib-jdk8')
+            // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
+            jvm().compilations.main.defaultSourceSet {
+                dependencies {
+                    implementation kotlin('stdlib-jdk8')
+                }
+            }
+            jvmMain {
+                dependsOn commonMain
+            }
+            androidMain {
+                dependsOn commonMain
             }
         }
-        jvmMain {
-            dependsOn commonMain
-        }
-        androidMain {
-            dependsOn commonMain
-        }
     }
-}
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
