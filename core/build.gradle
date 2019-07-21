@@ -14,6 +14,10 @@ if (project.hasProperty("js")) {
     apply from: "build-js.gradle"
 } else {
     apply plugin: 'com.android.library'
+    // for publishing purposes, per platform the artifact names etc will autom. be configured (to not have duplicate .jar files).
+    // Otherwise error when publishing via jitpack: > A POM cannot have multiple artifacts
+    // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
+    // MavenArtifact core:jar:jar:null.
     apply plugin: 'maven-publish'
 
     repositories {
@@ -63,13 +67,8 @@ if (project.hasProperty("js")) {
  * look like: /src/commonMain/kotlin
  */
     kotlin {
-        jvm() // commented because error when compiling in jitpack: > A POM cannot have multiple artifacts
-        // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
-        // MavenArtifact core:jar:jar:null.
-        // This is probably because we need to use js("othername") as using js() will make core.jar (which already exists)
-
+        jvm()
         js()
-
         // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
         android {
             publishLibraryVariants("release", "debug")
@@ -109,6 +108,14 @@ if (project.hasProperty("js")) {
             }
             androidMain {
                 dependsOn commonMain
+            }
+        }
+        
+        configure([targets["metadata"], android()]) {
+            mavenPublication { targetPublication ->
+                tasks.withType(AbstractPublishToMaven)
+                        .matching { it.publication == targetPublication }
+                        .all { onlyIf { /*findProperty("isLinux") == "true"*/ true } }
             }
         }
     }
