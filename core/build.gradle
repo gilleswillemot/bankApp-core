@@ -3,7 +3,7 @@
  *
  * To build the .js files from the .jar files (into '/web' directory) run: `gradlew build -Pjs`
  *
- * To build with kotlin-multiplatform (to build js, native, jvm, ...): `gradlew :core:build -Pmp`
+ * For publishing purposes (only android publish is needed as for now): `gradlew :core:build -Pnopublish`
  *
  * This parameter (and android plugin) are possibly redundant, as normally everything could be build
  * via kotlin-multiplatform plugin. Temporary build with parameter until solution is found.
@@ -51,14 +51,6 @@ if (project.hasProperty("js")) {
         }
     }
 
-//enableFeaturePreview('GRADLE_METADATA')
-
-
-//else if (!project.hasProperty("mp")) {
-//    apply plugin: 'kotlin-android'
-//} else {
-    project.logger.lifecycle('building with kotlin-multiplatform')
-
     apply plugin: 'kotlin-multiplatform'
 
 /** kotlin multiplatform has a predefined template structure with a commonMain, thus
@@ -67,6 +59,8 @@ if (project.hasProperty("js")) {
  * look like: /src/commonMain/kotlin
  */
     kotlin {
+        project.logger.lifecycle('building jvm and js with kotlin-multiplatform')
+
         jvm()
         js()
         // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
@@ -96,26 +90,11 @@ if (project.hasProperty("js")) {
 //        commonAndroidTest {
 //            kotlin.srcDir('src/androidTest/java')
 //        }
-
             // We might need this jvm dependency if List is not recognised in the IBankProvider interface.
             jvm().compilations.main.defaultSourceSet {
                 dependencies {
                     implementation kotlin('stdlib-jdk8')
                 }
-            }
-            jvmMain {
-                dependsOn commonMain
-            }
-            androidMain {
-                dependsOn commonMain
-            }
-        }
-        
-        configure([targets["metadata"], android()]) {
-            mavenPublication { targetPublication ->
-                tasks.withType(AbstractPublishToMaven)
-                        .matching { it.publication == targetPublication }
-                        .all { onlyIf { /*findProperty("isLinux") == "true"*/ true } }
             }
         }
     }
