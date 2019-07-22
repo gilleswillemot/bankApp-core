@@ -1,7 +1,7 @@
 # bankApp-core
 [![](https://jitpack.io/v/gilleswillemot/bankApp-core.svg)](https://jitpack.io/#gilleswillemot/bankApp-core)
 
-This library contains the interfaces (mostly providers, e.g. IBankProvider) that are used in the bankApp (ios & android) and implementations that extend the interfaces (e.g. BankProviderImpl that extends the IBankProvider interface).
+This library contains the interfaces (e.g. IBankProvider) that are used in the bankApp (ios & android). Other libraries will extend and implement the interfaces (e.g. BankProviderImpl which extends the IBankProvider interface).
 
 Dependency Inversion: by using interfaces, which are implemented in different libraries (e.g. BankProviderImpl) you protect your higher level components
 (client => bankApp-android & bankApp-ios) from changes to your lower level components (BankProviderImpl), thus no updates
