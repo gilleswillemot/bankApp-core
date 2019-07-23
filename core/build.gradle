@@ -61,8 +61,8 @@ kotlin {
         publishLibraryVariants("release", "debug")
     }
     linuxX64('linux')
-    [iosArm64(), iosX64(), macosX64('macos')].each {
-        it.binaries.framework {
+    configure([iosArm64(), iosX64(), macosX64('macos')]) {
+        binaries.framework {
             baseName = "BankProviderFramework"
 
             // Exporting dependencies in frameworks
