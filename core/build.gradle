@@ -96,8 +96,8 @@ kotlin {
 //        nativeTest {
 //            dependsOn(commonTest)
 //        }
-        [linuxMain, iosArm64Main, iosX64Main, macosMain].each {
-            it.dependsOn(nativeMain)
+        configure([linuxMain, iosArm64Main, iosX64Main, macosMain]) {
+            dependsOn(nativeMain)
         }
 //        commonAndroidTest {
 //            kotlin.srcDir('src/androidTest/java')
