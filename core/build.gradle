@@ -57,9 +57,9 @@ kotlin {
     jvm()
     js()
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    //android {
-        //publishLibraryVariants("release", "debug")
-    //}
+    android {
+        publishLibraryVariants("release", "debug")
+    }
     macosX64("native") {
         binaries {
             framework {
