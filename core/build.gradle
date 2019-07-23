@@ -60,14 +60,13 @@ kotlin {
     android {
         publishLibraryVariants("release", "debug")
     }
-    macosX64("native") {
-        binaries {
-            framework {
-                baseName = "BankProviderFramework"
+    linuxX64('linux')
+    [iosArm64(), iosX64(), macosX64('macos')].each {
+        it.binaries.framework {
+            baseName = "BankProviderFramework"
 
-                // Exporting dependencies in frameworks
+            // Exporting dependencies in frameworks
 //                export 'com.github.gilleswillemot.bankApp-core:core-jvm:1.2.9' // probably core-macosx64 needed
-            }
         }
     }
 
@@ -91,6 +90,15 @@ kotlin {
 //                implementation kotlin('test-junit')
 //            }
 //        }
+        nativeMain {
+            dependsOn(commonMain)
+        }
+//        nativeTest {
+//            dependsOn(commonTest)
+//        }
+        [linuxMain, iosArm64Main, iosX64Main, macosMain].each {
+            it.dependsOn(nativeMain)
+        }
 //        commonAndroidTest {
 //            kotlin.srcDir('src/androidTest/java')
 //        }
