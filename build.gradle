@@ -3,16 +3,27 @@
 buildscript {
     ext.kotlin_version = '1.3.41'
     repositories {
+        mavenLocal()
         google()
+        mavenCentral()
         jcenter()
-        
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_plugin_version"
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+}
+
+plugins {
+//    id "com.jfrog.bintray" version "1.8.4" // https://github.com/bintray/gradle-bintray-plugin
+    id 'net.researchgate.release' version '2.6.0' // needed for afterReleaseBuild, source: https://stackoverflow.com/questions/33867323/gradle-release-plugin-maven-publishing-plugin
 }
 
 allprojects {
@@ -21,6 +32,35 @@ allprojects {
         jcenter()
         
     }
+}
+
+apply plugin: 'com.jfrog.bintray' // needed for the bintray method in the bintray.gradle file.
+apply plugin: 'maven'
+apply plugin: 'maven-publish' // needed for publishing method here beneath.
+
+configure(allprojects) {
+    apply from: rootProject.file('pom.gradle')
+    apply from: rootProject.file('gradle/bintray.gradle')
+
+    publishing {
+        publications {
+            mavenProject(MavenPublication) {
+                groupId project.group
+                artifactId project.name
+                version project.version
+
+//                artifact sourceJar
+
+//                artifact emptyJar {
+//                    classifier 'javadoc'
+//                }
+
+                withPom(pom)
+            }
+        }
+    }
+
+    afterReleaseBuild.dependsOn bintrayUpload
 }
 
 task clean(type: Delete) {

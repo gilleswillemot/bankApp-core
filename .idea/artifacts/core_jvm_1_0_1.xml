@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="core-js-0.0.1">
+  <artifact type="jar" name="core-jvm-1.0.1">
     <output-path>C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-core\core\build\libs</output-path>
-    <root id="archive" name="core-js-0.0.1.jar">
-      <element id="module-output" name="core_jsMain" />
+    <root id="archive" name="core-jvm-1.0.1.jar">
+      <element id="module-output" name="core_jvmMain" />
     </root>
   </artifact>
 </component>

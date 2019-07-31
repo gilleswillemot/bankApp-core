@@ -1,1 +1,4 @@
 include ':core'
+
+// To enable module metadata publishing
+enableFeaturePreview("GRADLE_METADATA")

@@ -1,0 +1,38 @@
+// Fetching a property from local.properties
+Properties properties = new Properties()
+def propertiesFile = project.rootProject.file('local.properties')
+if (propertiesFile.exists()) {
+    properties.load(propertiesFile.newDataInputStream())
+}
+
+bintray {
+    user = properties.getProperty('BINTRAY_USER')//project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = properties.getProperty('BINTRAY_API_KEY')//project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    publish = true
+    override = true
+
+    pkg {
+        userOrg = projectBintrayUserOrg
+        repo = projectBintrayRepoName
+        name = projectBintrayArtifactName
+        licenses = ['Apache-2.0']
+        publications = ['mavenProject']
+
+        version {
+            name = project.version
+            released = new Date()
+            vcsTag = project.version
+
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = properties.getProperty('BINTRAY_PASSPHRASE')// System.getenv('BINTRAY_PASSPHRASE')
+                //Optional. The passphrase for GPG signing'
+            }
+        }
+    }
+}
+
+// https://stackoverflow.com/questions/47392238/task-bintrayupload-not-found-in-root-project-after-update-android-studio-to-3
+bintrayUpload.doFirst {
+    publications = project.publishing.publications
+}

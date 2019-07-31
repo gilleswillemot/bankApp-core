@@ -1,9 +1,12 @@
 /**
  * Build via terminal: `gradlew build` or `gradlew :core:build`
+ * To compile the code and produce libraries: `gradlew build publishToMavenLocal`
  *
  * Find the js, jvm, ... libs in core/build/libs folder.
  *
  * Find the JavaScript files in: core/build/classes/kotlin/js/main
+ *
+ * Find the pom and publishing files in: core/build/publications/*target*
  */
 
 apply plugin: 'com.android.library'
@@ -12,13 +15,14 @@ apply plugin: 'com.android.library'
 // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
 // MavenArtifact core:jar:jar:null.
 apply plugin: 'maven-publish'
+apply plugin: 'kotlin-multiplatform'
 
 repositories {
     mavenCentral()
 }
 
-group = 'be.abstraction.core'
-version = '0.0.1'
+group = group
+version = version
 
 android {
     compileSdkVersion 28
@@ -38,13 +42,11 @@ android {
     lintOptions {
         abortOnError false
     }
-    // Added sourceSets as I renamed the java folder to kotlin.
+    // Added source directory as I renamed the java folder to kotlin.
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
 }
-
-apply plugin: 'kotlin-multiplatform'
 
 /** kotlin multiplatform has a predefined template structure with a commonMain, thus
  * references to your source are needed if deviating from this convention.
@@ -52,8 +54,8 @@ apply plugin: 'kotlin-multiplatform'
  * look like: /src/commonMain/kotlin
  */
 kotlin {
-    project.logger.lifecycle('building jvm and js with kotlin-multiplatform')
 
+    project.logger.lifecycle('building jvm and js with kotlin-multiplatform')
     jvm()
     js()
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
