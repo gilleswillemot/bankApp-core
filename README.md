@@ -22,3 +22,16 @@ It is very import to do a correct linking of the main folder with the commonMain
 the test directory with the commonTest (`kotlin.srcDir('src/test/java')`).
 Failing to do so results in the tests not being able to be run as the tests would not be found (wrong package name reference) and the building of the source files would not work 
 as they would not be found by the compiler.
+
+# bintray
+only macOS, ios_x64 and iosArm64 .klib files will be added via bintray as android and js/jvm can be build & published via Jitpack.
+
+# env var
+properties.local.gradle, not added to git (bintray pw & login)
+properties.gradle
+
+# Build files
+- frameworks (dynamic dependencies) that are esed as imports in bankApp-ios are to be found (only buildable on macos host!) in 'build/bin/'
+- .klib files in 'build/classes/'
+- jars in 'build/libs/'
+- .aar in 'build/outputs/aar'

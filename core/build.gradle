@@ -10,6 +10,7 @@
  */
 
 apply plugin: 'com.android.library'
+
 // for publishing purposes, per platform the artifact names etc will autom. be configured (to not have duplicate .jar files).
 // Otherwise error when publishing via jitpack: > A POM cannot have multiple artifacts
 // with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
@@ -20,9 +21,6 @@ apply plugin: 'kotlin-multiplatform'
 repositories {
     mavenCentral()
 }
-
-group = group
-version = version
 
 android {
     compileSdkVersion 28
@@ -54,14 +52,13 @@ android {
  * look like: /src/commonMain/kotlin
  */
 kotlin {
-
     project.logger.lifecycle('building jvm and js with kotlin-multiplatform')
     jvm()
     js()
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android {
+    android() /*{
         publishLibraryVariants("release", "debug")
-    }
+    }*/
     linuxX64('linux')
     configure([iosArm64(), iosX64(), macosX64('macos')]) {
         binaries.framework {
