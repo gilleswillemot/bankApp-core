@@ -110,6 +110,38 @@ kotlin {
     }
 }
 
+apply plugin: 'com.jfrog.bintray' // needed for the bintray method in the bintray.gradle file.
+
+afterEvaluate {
+    project.publishing.publications.all {
+        // rename artifacts
+        groupId = group
+        if (it.name.contains('metadata')) {
+            artifactId = projectBintrayArtifactName
+        } else {
+            artifactId = projectBintrayArtifactName+"-$name"
+        }
+    }
+}
+apply from: rootProject.file('gradle/bintray.gradle')
+
+// This specifies the publications to upload to bintray before doing the bintrayUpload gradle task.
+// In the mpp configuration of one module after 1.3,
+// it is not uploaded unless you explicitly specify artifacts in publications like this.
+// It is not necessary to have the findAll part,
+// [project name]-kotlinMultiplatformbut a directory containing only pom files will be uploaded, so it is better to exclude it.
+bintrayUpload.doFirst {
+    publications = publishing.publications.collect {
+        it.name
+    }.findAll {
+        it != "kotlinMultiplatform"
+    }
+}
+
+//The task of bintrayUpload depends on publishToMavenLocal set in the previous section.
+// This will create maven artifacts when running bintrayUplaod's task.
+bintrayUpload.dependsOn publishToMavenLocal
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
