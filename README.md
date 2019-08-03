@@ -27,11 +27,18 @@ as they would not be found by the compiler.
 only macOS, ios_x64 and iosArm64 .klib files will be added via bintray as android and js/jvm can be build & published via Jitpack.
 
 # env var
-properties.local.gradle, not added to git (bintray pw & login)
-properties.gradle
+- properties.local.gradle, not added to git (bintray login, pw & API key)
+    e.g.: BINTRAY_USER=gillesw
+          BINTRAY_PASSPHRASE=test
+          BINTRAY_API_KEY=123 (https://www.jfrog.com/confluence/display/BT/Uploading#Uploading-GettingyourAPIKey)
+- properties.gradle
 
 # Build files
-- frameworks (dynamic dependencies) that are esed as imports in bankApp-ios are to be found (only buildable on macos host!) in 'build/bin/'
+
+- frameworks (dynamic dependencies) that are used as imports in bankApp-ios are to be found (only buildable on macos host!) in 'build/bin/'
+Frameworks xCode projects are not published. In order to build the frameworks (only works on macOS host system):
+`./gradlew build`
+
 - .klib files in 'build/classes/'
 - jars in 'build/libs/'
 - .aar in 'build/outputs/aar'
