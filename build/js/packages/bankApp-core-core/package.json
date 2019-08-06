@@ -1,0 +1,7 @@
+{
+  "main": "kotlin/bankApp-core-core.js",
+  "devDependencies": {},
+  "dependencies": {},
+  "name": "bankApp-core-core",
+  "version": "1.0.1"
+}
