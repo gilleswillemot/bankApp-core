@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="core-jvm2-1.0">
+    <output-path>C:\Users\Gilles\Desktop\Bachelorproef\code\bankApp-core\core\build\libs</output-path>
+    <root id="archive" name="core-jvm2-1.0.jar" />
+  </artifact>
+</component>

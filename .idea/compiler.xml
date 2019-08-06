@@ -2,6 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+<<<<<<< HEAD
+=======
+      <module name="core_jarMain" target="1.6" />
+      <module name="core_jarTest" target="1.6" />
+      <module name="core_jvm2Main" target="1.6" />
+      <module name="core_jvm2Test" target="1.6" />
+>>>>>>> 8f9a38c587e0c5e1abd0ccb5b147b46ac432065a
       <module name="core_jvmMain" target="1.6" />
       <module name="core_jvmTest" target="1.6" />
     </bytecodeTargetLevel>
