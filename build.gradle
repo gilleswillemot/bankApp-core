@@ -1,0 +1,47 @@
+/**
+ * For JVM, add implementation 'com.github.gilleswillemot:bankApp-core-jvm:1.0`:
+ * dependencies {*     implementation 'com.github.gilleswillemot:bankApp-core-jvm:1.0'
+ * }
+ * For JS: implementation 'com.github.gilleswillemot:bankApp-core-js:1.0'
+ * For MacOS Native: implementation 'com.github.gilleswillemot:bankApp-core-macos:1.0'
+ *
+ * Source to Publishing to Bintray guide: https://natanfudge.github.io/fudgedocs/publish-kotlin-mpp-lib.html
+ */
+buildscript {
+    ext.kotlin_version = '1.3.41'
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+        jcenter()
+        maven {
+            url "https://dl.bintray.com/gillesw/maven"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:$bintray_plugin_version"
+    }
+}
+
+plugins {
+    id('org.jetbrains.kotlin.multiplatform').version('1.3.41')
+    id "base"
+    id "maven-publish" // needed for publishing method in 'configure' here beneath.
+
+    // needed for afterReleaseBuild, source: https://stackoverflow.com/questions/33867323/gradle-release-plugin-maven-publishing-plugin
+    id 'net.researchgate.release' version '2.6.0'
+}
+
+
+group = group
+version = version
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+

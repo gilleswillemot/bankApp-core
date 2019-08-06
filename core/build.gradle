@@ -1,0 +1,136 @@
+/**
+ * Build via terminal: `gradlew build` or `gradlew :core:build`
+ * To compile the code and produce libraries: `gradlew build publishToMavenLocal`
+ *
+ * Find the js, jvm, ... libs in core/build/libs folder.
+ *
+ * Find the xCode frameworks for each target platform (ioxArm64, iosX64, ...) in: e.g. core/build/bin/iosArm64
+ *
+ * Find the JavaScript files in: core/build/classes/kotlin/js/main
+ *
+ * Find the pom and publishing files in: core/build/publications/*target*
+ */
+
+apply plugin: 'com.android.library'
+
+// for publishing purposes, per platform the artifact names etc will autom. be configured (to not have duplicate .jar files).
+// Otherwise error when publishing via jitpack: > A POM cannot have multiple artifacts
+// with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
+// MavenArtifact core:jar:jar:null.
+apply plugin: 'maven-publish'
+apply plugin: 'kotlin-multiplatform'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    // Added source directory as I renamed the java folder to kotlin.
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+/** kotlin multiplatform has a predefined template structure with a commonMain, thus
+ * references to your source are needed if deviating from this convention.
+ * This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
+ * look like: /src/commonMain/kotlin
+ */
+kotlin {
+    project.logger.lifecycle('building jvm and js with kotlin-multiplatform')
+    jvm()
+    js()
+    // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
+    android()
+    configure([iosArm64(), iosX64(), macosX64('macos')]) {
+        def artifactPlatform = name // target platform name
+        println artifactPlatform
+
+        binaries.framework {
+            baseName = 'bankApp-core' + artifactPlatform + "Framework"
+        }
+    }
+
+    sourceSets {
+        commonMain {
+            // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
+            // otherwise the files in src/main/kotlin would not be compiled.
+            kotlin.srcDir('src/main/kotlin')
+            resources.srcDir('src/main/res')
+            dependencies {
+                // if this dependency is removed => 'Kotlin not configured' in IBankProvider class.
+                implementation kotlin('stdlib-common')
+            }
+        }
+        nativeMain {
+            dependsOn(commonMain)
+        }
+        configure([iosArm64Main, iosX64Main, macosMain]) {
+            dependsOn(nativeMain)
+        }
+        // We need this jvm dependency if List is not recognised in the IBankProvider interface.
+        jvm().compilations.main.defaultSourceSet {
+            dependencies {
+                implementation kotlin('stdlib-jdk8')
+            }
+        }
+    }
+}
+
+apply plugin: 'com.jfrog.bintray' // needed for the bintray method in the bintray.gradle file.
+
+afterEvaluate {
+    project.publishing.publications.all {
+        // rename artifacts
+        groupId = group
+        if (it.name.contains('metadata')) {
+            artifactId = projectBintrayArtifactName
+        } else {
+            artifactId = projectBintrayArtifactName+"-$name"
+        }
+    }
+}
+apply from: rootProject.file('gradle/bintray.gradle')
+
+// This specifies the publications to upload to bintray before doing the bintrayUpload gradle task.
+// In the mpp configuration of one module after 1.3,
+// it is not uploaded unless you explicitly specify artifacts in publications like this.
+// It is not necessary to have the findAll part,
+// [project name]-kotlinMultiplatformbut a directory containing only pom files will be uploaded, so it is better to exclude it.
+bintrayUpload.doFirst {
+    publications = publishing.publications.collect {
+        it.name
+    }.findAll {
+        it != "kotlinMultiplatform"
+    }
+}
+
+//The task of bintrayUpload depends on publishToMavenLocal set in the previous section.
+// This will create maven artifacts when running bintrayUplaod's task.
+bintrayUpload.dependsOn publishToMavenLocal
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

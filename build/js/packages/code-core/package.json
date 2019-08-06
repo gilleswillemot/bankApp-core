@@ -1,0 +1,7 @@
+{
+  "main": "kotlin/code-core.js",
+  "devDependencies": {},
+  "dependencies": {},
+  "name": "code-core",
+  "version": "1.0.1"
+}
