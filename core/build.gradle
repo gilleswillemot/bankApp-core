@@ -4,6 +4,8 @@
  *
  * Find the js, jvm, ... libs in core/build/libs folder.
  *
+ * Find the xCode frameworks for each target platform (ioxArm64, iosX64, ...) in: e.g. core/build/bin/iosArm64
+ *
  * Find the JavaScript files in: core/build/classes/kotlin/js/main
  *
  * Find the pom and publishing files in: core/build/publications/*target*
