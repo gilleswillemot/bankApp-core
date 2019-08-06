@@ -56,16 +56,13 @@ kotlin {
     jvm()
     js()
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android() /*{
-        publishLibraryVariants("release", "debug")
-    }*/
-    linuxX64('linux')
+    android()
     configure([iosArm64(), iosX64(), macosX64('macos')]) {
-        binaries.framework {
-            baseName = "BankProviderFramework"
+        def artifactPlatform = name // target platform name
+        println artifactPlatform
 
-            // Exporting dependencies in frameworks
-//                export 'com.github.gilleswillemot.bankApp-core:core-jvm:1.2.9' // probably core-macosx64 needed
+        binaries.framework {
+            baseName = artifactPlatform + "Framework"
         }
     }
 
@@ -76,31 +73,16 @@ kotlin {
             kotlin.srcDir('src/main/kotlin')
             resources.srcDir('src/main/res')
             dependencies {
-                // if this dependency is removed => 'Kotlin not configured' in IBankProvider.
+                // if this dependency is removed => 'Kotlin not configured' in IBankProvider class.
                 implementation kotlin('stdlib-common')
             }
         }
-        //only kotlin code can be build with multiplatform, not java.
-//        commonTest {
-//            kotlin.srcDir('src/test/java')
-//            dependencies {
-//                implementation kotlin('test-common')
-//                implementation kotlin('test-annotations-common')
-//                implementation kotlin('test-junit')
-//            }
-//        }
         nativeMain {
             dependsOn(commonMain)
         }
-//        nativeTest {
-//            dependsOn(commonTest)
-//        }
-        configure([linuxMain, iosArm64Main, iosX64Main, macosMain]) {
+        configure([iosArm64Main, iosX64Main, macosMain]) {
             dependsOn(nativeMain)
         }
-//        commonAndroidTest {
-//            kotlin.srcDir('src/androidTest/java')
-//        }
         // We need this jvm dependency if List is not recognised in the IBankProvider interface.
         jvm().compilations.main.defaultSourceSet {
             dependencies {
