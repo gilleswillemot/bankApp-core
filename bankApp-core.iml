@@ -21,5 +21,11 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="bankApp-core.bankApp-core-metadata-2.0.1-sources" level="project" />
+    <orderEntry type="library" exported="" name="bankApp-core.bankApp-core-metadata-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="bankApp-core.bankApp-core-metadata-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="bankApp-core.bankApp-core-metadata-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="bankApp-core.bankApp-core-metadata-2.0.1-sources" level="project" />
+    <orderEntry type="library" exported="" name="bankApp-core.bankApp-core-metadata-2.0.1" level="project" />
   </component>
 </module>

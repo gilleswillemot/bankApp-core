@@ -58,7 +58,9 @@ kotlin {
     jvm()
     js()
     // https://kotlinlang.org/docs/reference/building-mpp-with-gradle.html#android-support
-    android()
+    android {
+        publishLibraryVariants("release", "debug")
+    }
     configure([iosArm64(), iosX64(), macosX64('macos')]) {
         def artifactPlatform = name // target platform name
         println artifactPlatform
