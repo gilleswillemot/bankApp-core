@@ -1,5 +1,5 @@
 # bankApp-core
-[![](https://jitpack.io/v/gilleswillemot/bankApp-core.svg)](https://jitpack.io/#gilleswillemot/bankApp-core)
+[ ![Download](https://api.bintray.com/packages/gillesw/maven/bankApp-core/images/download.svg?version=3.1.1) ](https://bintray.com/gillesw/maven/bankApp-core/3.1.1/link)
 
 This library contains the interfaces (e.g. IBankProvider) that are used in the bankApp (ios & android). Other libraries will extend and implement the interfaces (e.g. BankProviderImpl which extends the IBankProvider interface).
 
