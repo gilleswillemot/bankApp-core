@@ -33,51 +33,8 @@
     <orderEntry type="jdk" jdkName="Kotlin SDK" jdkType="KotlinSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="core_nativeMain" />
-    <orderEntry type="module" module-name="core_commonMain" />
-    <orderEntry type="module-library" scope="PROVIDED">
-      <library name="Kotlin/Native 1.3.41 - stdlib">
-        <CLASSES>
-          <root url="file://$USER_HOME$/.konan/kotlin-native-macos-1.3.1/klib/common/stdlib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - Accelerate [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - AppKit [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - ApplicationServices [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - builtin [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CFNetwork [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CommonCrypto [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - Contacts [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreData [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreFoundation [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreGraphics [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreImage [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreLocation [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreML [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreServices [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreText [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - CoreVideo [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - darwin [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - DiskArbitration [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - Foundation [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - GLUT [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - iconv [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - ImageIO [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - IOKit [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - IOSurface [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - libkern [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - Metal [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - objc [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - OpenGL [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - OpenGL3 [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - OpenGLCommon [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - osx [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - posix [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - QuartzCore [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - Security [macos_x64]" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - zlib [macos_x64]" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Kotlin/Native 1.3.41 - stdlib" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.3.41" level="project" />
+    <orderEntry type="module" module-name="core_commonMain" />
   </component>
 </module>
