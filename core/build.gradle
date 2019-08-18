@@ -54,7 +54,6 @@ android {
  * look like: /src/commonMain/kotlin
  */
 kotlin {
-    project.logger.lifecycle('building jvm and js with kotlin-multiplatform')
     jvm()
     js()
     configure([iosArm64(), iosX64(), macosX64('macos')]) {
@@ -71,7 +70,6 @@ kotlin {
             // We add the source set origin, because we don't worked with a commonMain folder (we used main folder) and
             // otherwise the files in src/main/kotlin would not be compiled.
             kotlin.srcDir('src/main/kotlin')
-            resources.srcDir('src/main/res')
             dependencies {
                 // if this dependency is removed => 'Kotlin not configured' in IBankProvider class.
                 implementation kotlin('stdlib-common')
