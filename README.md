@@ -44,7 +44,7 @@ Frameworks xCode projects are not published. In order to build the frameworks (o
 - .aar in 'build/outputs/aar'
 
 #License
-Copyright 2019 gillewillemot
+Copyright 2019 gilleswillemot
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
