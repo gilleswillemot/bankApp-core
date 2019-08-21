@@ -18,17 +18,29 @@
       <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosMain.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosTest.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_commonMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_commonMain.iml" filepath="$PROJECT_DIR$/core/core_commonMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_commonTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_commonTest.iml" filepath="$PROJECT_DIR$/core/core_commonTest.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_iosArm64Main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_iosArm64Main.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_iosArm64Main.iml" filepath="$PROJECT_DIR$/core/core_iosArm64Main.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_iosArm64Test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_iosArm64Test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_iosArm64Test.iml" filepath="$PROJECT_DIR$/core/core_iosArm64Test.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_iosX64Main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_iosX64Main.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_iosX64Main.iml" filepath="$PROJECT_DIR$/core/core_iosX64Main.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_iosX64Test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_iosX64Test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_iosX64Test.iml" filepath="$PROJECT_DIR$/core/core_iosX64Test.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_jsMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_jsMain.iml" filepath="$PROJECT_DIR$/core/core_jsMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_jsTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_jsTest.iml" filepath="$PROJECT_DIR$/core/core_jsTest.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_jvmMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_jvmMain.iml" filepath="$PROJECT_DIR$/core/core_jvmMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_jvmTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_jvmTest.iml" filepath="$PROJECT_DIR$/core/core_jvmTest.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_macosMain.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_macosMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_macosMain.iml" filepath="$PROJECT_DIR$/core/core_macosMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_macosTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_macosTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_macosTest.iml" filepath="$PROJECT_DIR$/core/core_macosTest.iml" group="core" />
     </modules>
   </component>
