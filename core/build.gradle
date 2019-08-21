@@ -1,58 +1,11 @@
 /**
  * Build via terminal: `gradlew build` or `gradlew :core:build`
  * To compile the code and produce libraries: `gradlew build publishToMavenLocal`
- *
- * Find the js, jvm, ... libs in core/build/libs folder.
- *
- * Find the xCode frameworks for each target platform (ioxArm64, iosX64, ...) in: e.g. core/build/bin/iosArm64
- *
- * Find the JavaScript files in: core/build/classes/kotlin/js/main
- *
- * Find the pom and publishing files in: core/build/publications/*target*
+ * and to publish: `gradlew bintrayUpload`.
  */
-
-apply plugin: 'com.android.library'
-
-// for publishing purposes, per platform the artifact names etc will autom. be configured (to not have duplicate .jar files).
-// Otherwise error when publishing via jitpack: > A POM cannot have multiple artifacts
-// with the same type and classifier. Already have MavenArtifact core:jar:jar:null, trying to add
-// MavenArtifact core:jar:jar:null.
 apply plugin: 'maven-publish'
 apply plugin: 'kotlin-multiplatform'
 
-repositories {
-    mavenCentral()
-}
-
-android {
-    compileSdkVersion 28
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    lintOptions {
-        abortOnError false
-    }
-    // Added source directory as I renamed the java folder to kotlin.
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
-}
-
-/** kotlin multiplatform has a predefined template structure with a commonMain, thus
- * references to your source are needed if deviating from this convention.
- * This project was created with Android Studio: /src/main/java, while when using IDEA a multiplatform project would
- * look like: /src/commonMain/kotlin
- */
 kotlin {
     jvm()
     js()
@@ -92,10 +45,12 @@ afterEvaluate {
         if (it.name.contains('metadata')) {
             artifactId = projectBintrayArtifactName
         } else {
-            artifactId = projectBintrayArtifactName+"-$name"
+            artifactId = projectBintrayArtifactName + "-$name"
         }
     }
 }
+
+// Bintray repository setup / configuration.
 apply from: rootProject.file('gradle/bintray.gradle')
 
 // This specifies the publications to upload to bintray before doing the bintrayUpload gradle task.
@@ -114,12 +69,3 @@ bintrayUpload.doFirst {
 //The task of bintrayUpload depends on publishToMavenLocal set in the previous section.
 // This will create maven artifacts when running bintrayUpload's task.
 bintrayUpload.dependsOn publishToMavenLocal
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}

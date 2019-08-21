@@ -5,6 +5,18 @@
       <module fileurl="file://$PROJECT_DIR$/bankApp-core.iml" filepath="$PROJECT_DIR$/bankApp-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/bankApp-core_commonMain.iml" filepath="$PROJECT_DIR$/bankApp-core_commonMain.iml" group="bankApp-core" />
       <module fileurl="file://$PROJECT_DIR$/bankApp-core_commonTest.iml" filepath="$PROJECT_DIR$/bankApp-core_commonTest.iml" group="bankApp-core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_commonMain.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_commonMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_commonTest.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_commonTest.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosArm64Main.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosArm64Main.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosArm64Test.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosArm64Test.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosX64Main.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosX64Main.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosX64Test.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_iosX64Test.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_jsMain.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_jsMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_jsTest.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_jsTest.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_jvmMain.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_jvmMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_jvmTest.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_jvmTest.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosMain.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosMain.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosTest.iml" filepath="$PROJECT_DIR$/core/com.github.gilleswillemot-core_macosTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core_commonMain.iml" filepath="$PROJECT_DIR$/core/core_commonMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_commonTest.iml" filepath="$PROJECT_DIR$/core/core_commonTest.iml" group="core" />
