@@ -18,8 +18,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/core_jvmTest.iml" filepath="$PROJECT_DIR$/core/core_jvmTest.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_macosMain.iml" filepath="$PROJECT_DIR$/core/core_macosMain.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/core_macosTest.iml" filepath="$PROJECT_DIR$/core/core_macosTest.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/core/core_wasm32Main.iml" filepath="$PROJECT_DIR$/core/core_wasm32Main.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/core/core_wasm32Test.iml" filepath="$PROJECT_DIR$/core/core_wasm32Test.iml" group="core" />
     </modules>
   </component>
 </project>

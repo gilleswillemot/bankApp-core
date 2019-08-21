@@ -56,7 +56,6 @@ android {
 kotlin {
     jvm()
     js()
-    wasm32()
     configure([iosArm64(), iosX64(), macosX64('macos')]) {
         def artifactPlatform = name // target platform name
         println artifactPlatform
@@ -76,19 +75,11 @@ kotlin {
                 implementation kotlin('stdlib-common')
             }
         }
-//        nativeMain {
-//            dependsOn(commonMain)
-//        }
-//        configure([iosArm64Main, iosX64Main, macosMain]) {
-//            dependsOn(nativeMain)
-//        }
-        // We need this jvm dependency if List is not recognised in the IBankProvider interface.
         jvm().compilations.main.defaultSourceSet {
             dependencies {
                 implementation kotlin('stdlib-jdk8')
             }
         }
-
     }
 }
 
