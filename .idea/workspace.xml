@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4b540b7-2fb9-4735-b8d7-4b93817381fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/core_js_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/core_jvm_3_2_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,25 +13,33 @@
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/core_js_3_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/core_js_3_1_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/core_jvm_3_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/core_jvm_3_1_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_41_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_41_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_41_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Kotlin_Native_1_3_41___stdlib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Kotlin_Native_1_3_41___stdlib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bankApp-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bankApp-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bankApp-core_commonMain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bankApp-core_commonMain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bankApp-core_commonTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bankApp-core_commonTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/packages/bankApp-core-core-test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/bankApp-core-core-test/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/packages/bankApp-core-core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/bankApp-core-core/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_commonMain.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_commonTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_iosArm64Main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_iosArm64Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_iosX64Main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_iosX64Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_jsMain.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_jsTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_jvmMain.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_jvmTest.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_macosMain.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core_macosTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -61,11 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#197#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -73,17 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gradle/bintray.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
+            <state relative-caret-position="390">
               <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -91,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="480">
+              <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
               <folding>
                 <element signature="e#0#453#0" expanded="true" />
               </folding>
@@ -103,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gradle.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="270">
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
@@ -118,17 +116,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/core/build.gradle" />
         <option value="$PROJECT_DIR$/gradle.properties" />
         <option value="$PROJECT_DIR$/local.properties" />
-        <option value="$PROJECT_DIR$/core/build.gradle" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1450" />
-    <option name="y" value="240" />
-    <option name="width" value="975" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="986" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -136,23 +133,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="bankApp-core" type="1abcf292:AndroidViewProjectNode" />
-              <item name="core" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="bankApp-core" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,6 +151,21 @@
               <item name="bankApp-core" type="b2602c69:ProjectViewProjectNode" />
               <item name="bankApp-core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="core" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bankApp-core" type="1abcf292:AndroidViewProjectNode" />
+              <item name="core" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="bankApp-core" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -217,11 +214,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1920" height="986" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.32917082" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3290735" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -232,9 +228,9 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Logcat" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.36217305" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.36129755" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" weight="0.32897383" />
+      <window_info anchor="bottom" id="Build" order="5" weight="0.32885906" />
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -253,45 +249,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle/bintray.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
+        <state relative-caret-position="390">
           <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#453#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#453#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#197#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="42" />
         </state>
       </provider>
     </entry>
