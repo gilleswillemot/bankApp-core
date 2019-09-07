@@ -5,11 +5,9 @@ if (propertiesFile.exists()) {
     properties.load(propertiesFile.newDataInputStream())
 }
 
-// https://github.com/bintray/gradle-bintray-plugin#step-4-add-your-bintray-package-information-to-the-bintray-closure
 bintray {
-    user = properties.getProperty('BINTRAY_USER')//project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
-    key = properties.getProperty('BINTRAY_API_KEY')//project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
-//    override = true
+    user = properties.getProperty('BINTRAY_USER')
+    key = properties.getProperty('BINTRAY_API_KEY')
 
     // If you set publish to true, the new version will be published the moment you upload to bintray. If false,
     // it will not be published unless you press the publish button on the bintray web.
@@ -22,7 +20,6 @@ bintray {
         name = projectBintrayArtifactName
         vcsUrl = projectGithubUrl
         licenses = ['Apache-2.0']
-//        publications = ['mavenProject']
 
         version {
             name = project.version
