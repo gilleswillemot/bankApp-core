@@ -43,7 +43,7 @@ Frameworks xCode projects are not published. In order to build the frameworks (o
 - jars in 'build/libs/'
 - .aar in 'build/outputs/aar'
 
-#License
+# License
 Copyright 2019 gilleswillemot
 
 Licensed under the Apache License, Version 2.0 (the "License");
